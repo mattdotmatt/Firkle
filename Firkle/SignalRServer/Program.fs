@@ -15,9 +15,6 @@ open TaskHelper
 open System.Threading.Tasks
 
 module MyServer =
-
-    //SignalR supports two kinds of connections: Hub and PersistentConnection
-
     type MyConnection() as this = 
         inherit PersistentConnection()
         override x.OnConnected(req,id) =
@@ -27,20 +24,20 @@ module MyServer =
             this.Connection.Send(id, "Thanks for " + data) |> ignore
             base.OnReceived(req,id,data)
 
-    [<HubName("myhub")>]
-    type MyHub() as this = 
+    [<HubName("firkle")>]
+    type Firkle() as this = 
         inherit Hub()
         override x.OnConnected() =
             base.OnConnected()
-        // Define the MyCustomServerFunction on the server.
-        member x.MyCustomServerFunction(fromClient : string) : unit =
-            let (t:Task) = this.Clients.Caller?myCustomClientFunction("Thanks for " + fromClient)
+
+        member x.makeAMove(gameId : string, move : string) : unit =
+            let (t:Task) = this.Clients.Caller?play("Thanks for " + move + ", " + gameId)
             t.Wait()
 
     let sendAll msg = 
             GlobalHost.ConnectionManager.GetConnectionContext<MyConnection>().Connection.Broadcast(msg) 
                 |> Async.awaitPlainTask |> ignore
-            GlobalHost.ConnectionManager.GetHubContext<MyHub>().Clients.All?myCustomClientFunction(msg)
+            GlobalHost.ConnectionManager.GetHubContext<Firkle>().Clients.All?play(msg)
                 |> Async.awaitPlainTask |> ignore
             
 

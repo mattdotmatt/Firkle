@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Play</title>
+
+        <script src="Scripts/jquery-2.1.1.min.js"></script>
+        <script src="Scripts/jquery.signalR-2.1.1.min.js"></script>
+        <!--script src="http://localhost:8080/signalrHub/hubs" type="text/javascript"></script-->
+        <script src="/signalrHub/hubs" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var hub;
+
+                $.connection.hub.url = '/signalrHub';
+                //$.connection.hub.url = 'http://localhost:8080/signalrHub';
+
+                hub = $.connection.firkle;
+                if (hub) {
+                    // Define the play on the client.
+                    hub.client.play = function(value) {
+                        $('#results').append('<p>' + value + '</p>');
+                    };
+
+                    $.connection.hub.start().
+                        done(function() {
+                            $('#submit').on('click', function() {
+                                // Call the server function
+                                hub.server.makeAMove($('#gameid').val(),$('#move').val());
+                            });
+                        });
+                } else {
+                    console.log('hub not found');
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <label for="gameid">Game Id</label><input type="text" id="gameid" />
+            </li>
+            <li>
+                <label for="gameid">Move</label><input type="text" id="move" />
+            </li>
+            <li>
+                <button type="button" id="submit" value="submit">Play</button>
+            </li>
+        </ul>
+        <div id="results"></div>
+    </body>
+</html>
