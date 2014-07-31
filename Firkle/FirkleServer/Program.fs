@@ -1,4 +1,4 @@
-﻿namespace SignalRServer
+﻿namespace FirkleServer
 
 open Microsoft.AspNet.SignalR
 open Microsoft.AspNet.SignalR.Hubs

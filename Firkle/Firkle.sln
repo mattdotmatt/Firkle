@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SignalRServer", "SignalRServer\SignalRServer.fsproj", "{B79D6D3C-23FA-4D27-AEAD-DC2391000220}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FirkleServer", "FirkleServer\FirkleServer.fsproj", "{B79D6D3C-23FA-4D27-AEAD-DC2391000220}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{0CEF79E9-0A53-40A5-829B-B9EA7EBFAE54}"
 EndProject
@@ -15,7 +15,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4337EE19-8630-4BC9-BF10-94C1F6B605A6}"
 	ProjectSection(SolutionItems) = preProject
 		C:\USERS\MYOUNG\APPDATA\LOCAL\MICROSOFT\VISUALSTUDIO\11.0\EXTENSIONS\QIZZTCRC.2BA\description.html = C:\USERS\MYOUNG\APPDATA\LOCAL\MICROSOFT\VISUALSTUDIO\11.0\EXTENSIONS\QIZZTCRC.2BA\description.html
+		README.markdown = README.markdown
 	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FirkleServer.Tests", "FirkleServer.Tests\FirkleServer.Tests.fsproj", "{528A4AC5-0FD6-4C41-9171-E3FA3A20F3F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +34,10 @@ Global
 		{0CEF79E9-0A53-40A5-829B-B9EA7EBFAE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CEF79E9-0A53-40A5-829B-B9EA7EBFAE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CEF79E9-0A53-40A5-829B-B9EA7EBFAE54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{528A4AC5-0FD6-4C41-9171-E3FA3A20F3F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{528A4AC5-0FD6-4C41-9171-E3FA3A20F3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{528A4AC5-0FD6-4C41-9171-E3FA3A20F3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{528A4AC5-0FD6-4C41-9171-E3FA3A20F3F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

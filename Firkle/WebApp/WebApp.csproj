@@ -123,9 +123,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SignalRServer\SignalRServer.fsproj">
+    <ProjectReference Include="..\FirkleServer\FirkleServer.fsproj">
       <Project>{b79d6d3c-23fa-4d27-aead-dc2391000220}</Project>
-      <Name>SignalRServer</Name>
+      <Name>FirkleServer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

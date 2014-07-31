@@ -30,7 +30,7 @@
 
 
 #load "Program.fs"
-open SignalRServer.MyServer
+open FirkleServer.MyServer
 
 //Let's start Owin-server on F#-interactive!
 main ()
